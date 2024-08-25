@@ -1,0 +1,24 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- bean definitions here -->
+<!--    //Scope - Singleton (default)-->
+<!--    // If scope is Singleton, then only one instance of the bean will be created and shared among all the requests. and when-->
+<!--    //   ApplicationContext context = new ClassPathXmlApplicationContext("spring.xml"); this line is executed, the bean is created.-->
+
+<!--    //Scope - Prototype-->
+<!--    // If scope is Prototype, then a new instance of the bean will be created for each getBean() request. and when-->
+<!--    //   ApplicationContext context = new ClassPathXmlApplicationContext("spring.xml"); this line is executed, the bean is not created.-->
+<!--    <bean id="programmer" class="org.example.Programmer" scope="prototype" />-->
+    <bean id="programmer" class="org.example.Programmer">
+        <property name="laptop" ref="laptopNew"> </property>
+    </bean>
+    <bean id="laptopNew" class="org.example.Laptop" >
+        <constructor-arg value="Hp" />
+<!--        <property name="brand" value="Dell"> </property>-->
+
+    </bean>
+
+</beans>
